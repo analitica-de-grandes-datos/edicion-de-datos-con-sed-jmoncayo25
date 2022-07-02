@@ -41,3 +41,15 @@
 #
 #  >>> Escriba su codigo a partir de este punto <<<
 #
+filename=$1
+sed 's/,/./g' $filename > data1
+sed -i 's/;/,/g' data1
+sed -i 's/\(\b[0-9]\/\)/0\1/' data1
+sed -i 's/\/\([0-9]\/\)/\/0\1/' data1
+sed -i 's/\/\([0-9][0-9]\),/\/20\1,/' data1
+sed -i 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9][0-9][0-9]\)/\3-\2-\1/' data1
+sed -i '5 s/,,/,\\N,\\N/g' data1
+sed -i '6 s/,,n/,\\N,\\N/g' data1
+sed -i 'y/acn/ACN/' data1
+sed -i '7 s/N,/N,\\N/g' data1
+sed '4 s/,N,/,\\N,/g' data1 > output.csv
