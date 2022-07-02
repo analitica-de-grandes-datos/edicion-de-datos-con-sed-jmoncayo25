@@ -42,7 +42,7 @@
 #  >>> Escriba su codigo a partir de este punto <<<
 #
 filename=$1
-sed 's/,/./g' filename > data1
+sed 's/,/./g' $filename > data1
 sed -i 's/;/,/g' data1
 sed -i 's/\(\b[0-9]\/\)/0\1/' data1
 sed -i 's/\/\([0-9]\/\)/\/0\1/' data1
