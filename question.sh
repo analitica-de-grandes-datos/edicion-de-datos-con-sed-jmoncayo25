@@ -51,5 +51,5 @@ sed -i 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9][0-9][0-9]\)/\3-\2-\1/' da
 sed -i '5 s/,,/,\\N,\\N/g' data1
 sed -i '6 s/,,n/,\\N,\\N/g' data1
 sed -i 'y/acn/ACN/' data1
-sed -i '7 s/N,/N,\\N/g' data1 > output.csv
+sed -i '7 s/N,/N,\\N/g' data1
 sed '4 s/,N,/,\\N,/g' data1 > output.csv
