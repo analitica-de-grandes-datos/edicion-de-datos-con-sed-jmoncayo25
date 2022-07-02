@@ -48,4 +48,5 @@ sed -i 's/\([0-9]\)\/\([0-9]\)\/\([0-9]*\)/\3-0\2-0\1/' data2
 sed -i 's/,/./g' data2
 sed -i 's/;/,/g' data2
 sed -i 's/n/\N/g' data2
+sed -e 's/\(.*\)/\U\1/' data2
 sed 's/,N/\\N/g' data2 > output.csv
