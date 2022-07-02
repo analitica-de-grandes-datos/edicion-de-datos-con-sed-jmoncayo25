@@ -49,4 +49,6 @@ sed -i 's/,/./g' data2
 sed -i 's/;/,/g' data2
 sed -i 's/n/\N/g' data2
 sed -e 's/\(.*\)/\U\1/' data2
-sed 's/,N/\\N/g' data2 > output.csv
+sed 's/,N/\\N/g' data2
+sed -e 's/\(.*\)/\U\1/' data2 > data3
+data3 > output.csv
