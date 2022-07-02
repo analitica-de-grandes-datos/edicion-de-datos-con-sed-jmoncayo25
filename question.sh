@@ -41,3 +41,11 @@
 #
 #  >>> Escriba su codigo a partir de este punto <<<
 #
+filename=$1
+
+sed 's/\([0-9][0-9]\)\/\([0-9][0-9]\)\/\([0-9][0-9]\)/20\3-\2-\1/' $filename > data2
+sed -i 's/\([0-9]\)\/\([0-9]\)\/\([0-9]*\)/\3-0\2-0\1/' data2
+sed -i 's/,/./g' data2
+sed -i 's/;/,/g' data2
+sed -i 's/n/\N/g' data2
+sed 's/,N/\\N/g' data2 > output.csv
